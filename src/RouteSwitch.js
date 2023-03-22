@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route }  from 'react-router-dom';
 import Blog from './Blog'
 import { ThemeContext, UserContext } from './components/Contexts';
+import FullBlogPost from './components/FullBlogPost';
 
 const RouteSwitch = () => {
     // Set up context API state
@@ -14,6 +15,7 @@ const RouteSwitch = () => {
                 <BrowserRouter>
                     <Routes>
                         <Route path='/' element={<Blog />}></Route>
+                        <Route path='/post/:id' element={<FullBlogPost />}></Route>
                     </Routes>
                 </BrowserRouter>
             </UserContext.Provider>
