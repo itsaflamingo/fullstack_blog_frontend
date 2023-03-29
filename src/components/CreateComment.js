@@ -12,8 +12,9 @@ export default function CreateComment({ post }) {
     });
 
     useEffect(() => {
+        if(comment.name.length === 0 || comment.comment.length === 0) return;
         validateForm();
-    }, [errors]);
+    }, [errors, comment]);
 
     const nameOnChange = (e) => {
         const input = e.target.value;
@@ -23,9 +24,13 @@ export default function CreateComment({ post }) {
                 ...errors,
                 name: 'Please enter a valid name'
             })
+            setIsClickable('no-click');
         }
-        setComment({ ...comment, name: input });
-        return;
+        else {
+            setErrors({...errors, name: ''});
+            setComment({ ...comment, name: input });
+            return;
+        }
     }
 
     const bodyOnChange = (e) => {
@@ -36,9 +41,13 @@ export default function CreateComment({ post }) {
                 ...errors,
                 comment: 'Please enter a valid comment'
             })
+            setIsClickable('no-click');
         }
-        setComment({ ...comment, comment: input });
-        return;    
+        else {
+            setErrors({...errors, comment: ''});
+            setComment({ ...comment, comment: input });
+            return; 
+        }   
     }
 
     const onSubmit = (e) => {
@@ -62,7 +71,7 @@ export default function CreateComment({ post }) {
     }
 
     const validateForm = () => {
-        if(errors.name.length    === 0 || 
+        if(errors.name.length    === 0 && 
            errors.comment.length === 0) {
             setIsClickable('can-click');
         }
@@ -72,7 +81,7 @@ export default function CreateComment({ post }) {
         <div className="create-comment">
             <form>
                 <div className="add-name">
-                    <span className="error"></span>
+                    <span className="error">{errors.name}</span>
                     <label htmlFor="name">Name</label>
                     <input
                     type='text'
@@ -80,7 +89,7 @@ export default function CreateComment({ post }) {
                     onChange={e => nameOnChange(e)}></input>
                 </div>
                 <div className="add-text">
-                    <span className='error'></span>
+                    <span className='error'>{errors.comment}</span>
                     <label htmlFor="body">Comment</label>
                     <input 
                     type='textarea' 
