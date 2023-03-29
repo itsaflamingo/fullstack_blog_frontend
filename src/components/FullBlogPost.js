@@ -11,9 +11,9 @@ export default function FullBlogPost() {
 
     return (
         <div id='blog-post-pg'>
-            <BlogPost post={post} />
-            <CreateComment />
-            <CommentsList post={post} />
+            <BlogPost      post={post} />
+            <CreateComment post={post} />
+            <CommentsList  post={post} />
         </div>
     )
 }

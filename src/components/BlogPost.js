@@ -12,9 +12,9 @@ export default function BlogPost(props) {
     return (
         <div className='blog-post'
         onClick={() => visitBlogPage()}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <p>{post.date_formatted}</p>
+            <h2>{post.title}         </h2>
+            <p> {post.body}          </p>
+            <p> {post.date_formatted}</p>
         </div>
     )
 }

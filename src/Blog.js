@@ -7,7 +7,7 @@ function Blog() {
   return (
     <div className="blog">
       <BlogPosts />
-      <Aside />
+      <Aside     />
     </div>
   );
 }
