@@ -25,7 +25,7 @@ export default function Aside() {
                 <Picture />
                 <Description />
                 <Archive />
-                {!user.user ? <LogIn /> : <LogOut />}
+                {user.user ? <LogIn /> : <LogOut />}
             </div>
         </BlogInfoContext.Provider>
     )
