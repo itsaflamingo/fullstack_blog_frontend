@@ -5,6 +5,7 @@ import { BlogInfoContext, UserContext } from '../Contexts';
 import { useContext, useEffect, useState } from 'react';
 import useFetch from '../useFetch';
 import LogIn from './LogIn';
+import LogOut from './LogOut';
 
 export default function Aside() {
 
@@ -24,7 +25,7 @@ export default function Aside() {
                 <Picture />
                 <Description />
                 <Archive />
-                {!user.user && <LogIn />}
+                {!user.user ? <LogIn /> : <LogOut />}
             </div>
         </BlogInfoContext.Provider>
     )
