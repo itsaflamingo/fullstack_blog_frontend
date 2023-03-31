@@ -1,5 +1,5 @@
 import './App.css';
-import Aside from './components/Aside'
+import Aside from './components/Aside/Aside'
 import BlogPosts from './components/BlogPosts';
 
 function Blog() {
