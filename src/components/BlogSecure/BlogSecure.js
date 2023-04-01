@@ -7,6 +7,10 @@ import Aside from "../Aside/Aside";
 
 export default function BlogSecure() {
 
+
+    const user = useContext(UserContext);
+    console.log(user.user)
+
     const token = process.env.REACT_APP_BEARER_TOKEN;
     
     const {data, loading} = useFetch({ 

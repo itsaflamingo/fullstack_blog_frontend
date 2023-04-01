@@ -27,8 +27,7 @@ export default function LogIn() {
             body: formData
         })
             .then(res => res.json())
-            .then(data => loggedUser.setUser(data))
-            .then(data => UserContext = data)
+            .then(data => loggedUser.setUser(data.user))
             .catch(err => console.log(err))
         
         nav('/blog-secure');

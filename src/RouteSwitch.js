@@ -17,7 +17,7 @@ const RouteSwitch = () => {
                     <Routes>
                         <Route path='/' element={<Blog />}></Route>
                         <Route path='/post/:id' element={<FullBlogPost />}></Route>
-                        {user.user && <Route path='/blog-secure' element={<BlogSecure />}></Route>}
+                        {'username' in user && <Route path='/blog-secure' element={<BlogSecure />}></Route>}
                     </Routes>
                 </BrowserRouter>
             </UserContext.Provider>
