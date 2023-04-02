@@ -4,6 +4,7 @@ import Blog from './Blog'
 import BlogSecure from './components/BlogSecure/BlogSecure';
 import { ThemeContext, UserContext } from './components/Contexts';
 import FullBlogPost from './components/FullBlogPost';
+import NewBlogPost from './components/NewBlogPost';
 
 const RouteSwitch = () => {
     // Set up context API state
@@ -18,6 +19,7 @@ const RouteSwitch = () => {
                         <Route path='/' element={<Blog />}></Route>
                         <Route path='/post/:id' element={<FullBlogPost />}></Route>
                         {'username' in user && <Route path='/blog-secure' element={<BlogSecure />}></Route>}
+                        {'username' in user && <Route path='/blog-secure/create-post' element={<NewBlogPost />}></Route>}
                     </Routes>
                 </BrowserRouter>
             </UserContext.Provider>

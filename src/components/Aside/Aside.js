@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import useFetch from '../useFetch';
 import LogIn from './LogIn';
 import LogOut from './LogOut';
+import { useNavigate } from 'react-router-dom';
 
 export default function Aside() {
 
@@ -13,14 +14,19 @@ export default function Aside() {
     const [blogInfo, setBlogInfo] = useState(BlogInfoContext);
     const user = useContext(UserContext);
 
+    const nav = useNavigate();
+
     useEffect(() => {
         // When loading changes, update blogInfo
         if(loading === true) return;
         setBlogInfo(data);
     }, [loading])
 
+    const navToCreatePost = () => nav('/blog-secure/create-post');
+
     return (
         <BlogInfoContext.Provider value={{blogInfo, setBlogInfo}}>
+            {user.user.username && <button onClick={() => navToCreatePost()}>New</button>}
             <div id='aside'>
                 <Picture />
                 <Description />
