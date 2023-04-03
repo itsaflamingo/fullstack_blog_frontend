@@ -11,6 +11,7 @@ const RouteSwitch = () => {
     // Set up context API state
     const [theme, setTheme] = useState(ThemeContext);
     const [user, setUser]   = useState(UserContext);
+    console.log(user);
 
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>

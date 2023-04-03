@@ -12,7 +12,7 @@ export default function EditBlogPost() {
     const token = process.env.REACT_APP_BEARER_TOKEN;
 
     // GET post to be edit
-    const {data, loading, fetchData} = useFetch({ 
+    const {data, loading} = useFetch({ 
         api: `https://fs-blog-backend.fly.dev/blog-secure/post/${id}/update`, 
         method: 'GET',
         headers: {
@@ -23,18 +23,13 @@ export default function EditBlogPost() {
 
     // Set onChange input as state
     const [input, setInput] = useState({});
-    const [options, setOptions] = useState({api: '', method: ''});
     
-    const { data: fetchedData } = useFetch(options);
-
     const nav = useNavigate();
 
     useEffect(() => {
         if(loading === true) return;
         setInput(data);
     }, [loading])
-
-    useEffect(() => {}, [options])
 
     // on input change 
     const titleOnChange = e => setInput({...input, title: e.target.value});
@@ -52,8 +47,7 @@ export default function EditBlogPost() {
         }).toString();
 
         // Make POST request to backend server using specified headers, then convert response to json and catch error 
-        fetchData({
-            api: `https://fs-blog-backend.fly.dev/blog-secure/post/create`, 
+        fetch(`https://fs-blog-backend.fly.dev/blog-secure/post/${id}/update`, { 
             method: 'PATCH', 
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -61,6 +55,9 @@ export default function EditBlogPost() {
               },
             body: formData
         })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
         nav('/blog-secure');
     }
 

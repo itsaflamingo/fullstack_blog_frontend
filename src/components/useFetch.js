@@ -22,7 +22,7 @@ export default function useFetch({ api, method, headers, body }) {
         .then(data => setData(data))
         .catch(err => console.log(err))
         .then(() => setLoading(false))
-    } 
+    
   }
 
   useEffect(() => {
