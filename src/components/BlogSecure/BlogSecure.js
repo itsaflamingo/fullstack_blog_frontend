@@ -1,15 +1,9 @@
 import BlogPost from "../BlogPost";
 import useFetch from "../useFetch";
 import uniqid from 'uniqid';
-import { useContext } from "react";
-import { UserContext } from "../Contexts";
 import Aside from "../Aside/Aside";
 
 export default function BlogSecure() {
-
-
-    const user = useContext(UserContext);
-    console.log(user.user)
 
     const token = process.env.REACT_APP_BEARER_TOKEN;
     

@@ -8,8 +8,7 @@ export default function BlogPost({ post }) {
     const user = useContext(UserContext);
 
     const visitBlogPage = () => nav(`/post/${post.id}`, { state: post });
-
-    const visitEdit = () => nav(`/post/${post.id}/edit`, { state: post });
+    const visitEdit = () => nav(`/blog-secure/post/${post.id}/edit`, { state: post });
     
     return (
         <div className='blog-post'>
