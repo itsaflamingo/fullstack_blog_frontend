@@ -1,10 +1,26 @@
-export default function Comment({ comment }) {
+import { useContext } from "react";
+import { UserContext } from "./Contexts";
+
+export default function Comment({ comment, post }) {
+    const user = useContext(UserContext);
+    const token = process.env.REACT_APP_BEARER_TOKEN;
+
+    const deleteComment = () => {
+        fetch(`https://fs-blog-backend.fly.dev/blog-secure/post/${post.id}/${comment.id}/delete`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+              }
+        })
+    }
 
     return (
         <div className="comment-wrapper">
             <h3>{comment.name}</h3>
             <p>{comment.body}</p>
             <p>{comment.date_formatted}</p>
+            {user.user && <button onClick={deleteComment}>Delete</button>}
         </div>
     )
 }

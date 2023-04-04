@@ -14,7 +14,7 @@ export default function CommentsList({ post }) {
             {!loading && data.map(comment => {
                 return (
                     <div className='comment'>
-                        <Comment comment={comment} />
+                        <Comment comment={comment} post={post}/>
                     </div>
                 )
             })}
