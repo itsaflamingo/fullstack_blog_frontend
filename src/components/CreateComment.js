@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CommentContext } from "./Contexts";
 import hasProfanity from './hasProfanity'
 
 export default function CreateComment({ post }) {
@@ -10,6 +11,8 @@ export default function CreateComment({ post }) {
         name: '',
         comment: ''
     });
+
+    const {comments, setComments} = useContext(CommentContext);
 
     useEffect(() => {
         validateForm();
@@ -55,6 +58,7 @@ export default function CreateComment({ post }) {
             body: formData
         })
             .then(res => res.json())
+            .then(data => setComments([...comments, data]))
             .catch(err => console.log(err))
     }
 

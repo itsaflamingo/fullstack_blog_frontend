@@ -9,9 +9,7 @@ export default function NewBlogPost() {
         body: '',
         publish: false
     });
-    const [options, setOptions] = useState({api: '', method: ''});
-    useFetch(options);
-
+    
     const nav = useNavigate();
 
     // on input change 
@@ -34,8 +32,7 @@ export default function NewBlogPost() {
         }).toString();
 
         // Make POST request to backend server using specified headers, then convert response to json and catch error 
-        setOptions({
-            api: `https://fs-blog-backend.fly.dev/blog-secure/post/create`, 
+        fetch(`https://fs-blog-backend.fly.dev/blog-secure/post/create`, { 
             method: 'POST', 
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -64,7 +61,7 @@ export default function NewBlogPost() {
                     <input id='is-published'
                     type='checkbox'
                     value={input.publish}
-                    onChange={() => checkBoxOnChange()}></input>
+                    onChange={checkBoxOnChange}></input>
                 </label>
                 <button type='submit'
                 onClick={e => onSubmit(e)}>Submit</button>
