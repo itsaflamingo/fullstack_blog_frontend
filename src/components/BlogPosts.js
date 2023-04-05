@@ -9,7 +9,7 @@ export default function BlogPosts() {
         <div className="blog-posts">
             {!loading && data.map((post, index) => {
                 return (
-                    <div className='blog-posts' key={index}>
+                    <div className='blog-post-container' key={index}>
                         <BlogPost post={post} />
                     </div>
                 )

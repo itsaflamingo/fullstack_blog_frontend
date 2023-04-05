@@ -1,6 +1,37 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+#root {
+  height: 100%;
+}
 .blog {
   display: flex;
   justify-content: space-between;
+  height: 100%;
+}
+/* BLOG POSTS */
+.blog-posts {
+  min-width: 83%;
+  background-image: url('./img/iStock-1185906653MED.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+
+  display: flex;
+  justify-content: center;
+}
+.blog-post {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #48404D;
+  min-width: 700px;
+  margin-top: 15px;
+  color: #48404D;
+}
+/* ASIDE */
+.aside {
+  background-color: #48404D;
+  color: white;
 }
 .aside-img {
   max-width: 150px;

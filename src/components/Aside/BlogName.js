@@ -6,7 +6,7 @@ export default function BlogName() {
 
     return (
         <div className="blog-name">
-            {info.blogInfo[0] !== undefined && <h3>{info.blogInfo[0].name}</h3>}
+            {info.blogInfo[0] !== undefined && <h1>{info.blogInfo[0].name}</h1>}
         </div>
     )
 }

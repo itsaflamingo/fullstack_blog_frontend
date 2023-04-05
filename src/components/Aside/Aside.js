@@ -28,7 +28,7 @@ export default function Aside() {
     return (
         <BlogInfoContext.Provider value={{blogInfo, setBlogInfo}}>
             {user.user.username && <button onClick={() => navToCreatePost()}>New</button>}
-            <div id='aside'>
+            <div className='aside'>
                 <BlogName />
                 <Picture />
                 <Description />
