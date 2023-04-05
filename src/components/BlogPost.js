@@ -19,6 +19,7 @@ export default function BlogPost({ post }) {
                 'Content-Type': 'application/x-www-form-urlencoded'
               }
         })
+            .catch(err => console.log(err));
     }
     
     return (
@@ -28,8 +29,8 @@ export default function BlogPost({ post }) {
             <p> {post.body}          </p>
             <p> {post.date_formatted}</p>
 
-            {user.user && <button onClick={visitEdit}>Edit</button>}
-            {user.user && <button onClick={deletePost}>Delete</button>}
+            {user.user.username && <button onClick={visitEdit}>Edit</button>}
+            {user.user.username && <button onClick={deletePost}>Delete</button>}
         </div>
     )
 }

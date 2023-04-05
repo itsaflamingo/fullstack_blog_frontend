@@ -7,7 +7,7 @@ export default function BlogPicture() {
 
     return (
         <div className="blog-picture">
-            {info.blogInfo[0] !== undefined && <img src={info.blogInfo[0].picture} alt='blog'/>}
+            {info.blogInfo[0] !== undefined && <img className='aside-img'src={info.blogInfo[0].picture} alt='blog'/>}
         </div>
     )
 }

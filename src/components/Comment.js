@@ -23,7 +23,7 @@ export default function Comment({ comment, post }) {
             <h3>{comment.name}</h3>
             <p>{comment.body}</p>
             <p>{comment.date_formatted}</p>
-            {user.user && <button onClick={deleteComment}>Delete</button>}
+            {user.user.username && <button onClick={deleteComment}>Delete</button>}
         </div>
     )
 }

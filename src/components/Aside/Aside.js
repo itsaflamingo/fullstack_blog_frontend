@@ -7,6 +7,7 @@ import useFetch from '../useFetch';
 import LogIn from './LogIn';
 import LogOut from './LogOut';
 import { useNavigate } from 'react-router-dom';
+import BlogName from './BlogName';
 
 export default function Aside() {
 
@@ -28,6 +29,7 @@ export default function Aside() {
         <BlogInfoContext.Provider value={{blogInfo, setBlogInfo}}>
             {user.user.username && <button onClick={() => navToCreatePost()}>New</button>}
             <div id='aside'>
+                <BlogName />
                 <Picture />
                 <Description />
                 <Archive />
