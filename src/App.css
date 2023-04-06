@@ -149,7 +149,8 @@ button {
   justify-content: center;
   min-height: 260px;
   border-radius: var(--border-radius);
-  margin: 15px 0;
+  margin-top: 15px;
+  padding: 15px 0;
 }
 .create-comment form {
   max-width: 250px;
@@ -175,10 +176,10 @@ button {
   border-radius: var(--border-radius);
   border: none;
   width: 220px;
+  padding: 7px;
 }
 textarea {
   vertical-align: top;
-  padding: 7px;
 }
 .submit-comment-container {
   display: flex;
