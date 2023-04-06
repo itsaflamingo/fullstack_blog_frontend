@@ -9,6 +9,8 @@
 body {
   height: 100vh;
   margin: 0;
+  background-image: var(--main-background);
+
 }
 #root {
   height: 100%;
@@ -21,7 +23,6 @@ body {
 /* BLOG POSTS */
 .blog-posts {
   min-width: 83%;
-  background-image: var(--main-background);
   background-size: contain;
   background-repeat: repeat;
 
@@ -182,4 +183,12 @@ textarea {
 .submit-comment-container {
   display: flex;
   justify-content: center;
+}
+.comment-wrapper {
+  background-color: var(--light-purple);
+  min-width: 500px;
+  border: 1px solid var(--purple);
+  margin: 15px 0;
+  border-radius: var(--border-radius);
+  padding: 0 15px;
 }
