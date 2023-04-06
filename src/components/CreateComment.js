@@ -84,15 +84,18 @@ export default function CreateComment({ post }) {
                 <div className="add-text">
                     <span className='error'>{errors.comment}</span>
                     <label htmlFor="comment">Comment</label>
-                    <input 
-                    type='textarea' 
+                    <textarea 
                     id='comment' 
-                    onChange={e => onChangeHandler(e)}></input>
+                    onChange={e => onChangeHandler(e)}></textarea>
                 </div>
-                <button 
-                type='submit'
-                onClick={e => onSubmit(e)}
-                className={isClickable}>Submit</button>
+                <div className="submit-comment-container">
+                    <button 
+                        type='submit'
+                        onClick={e => onSubmit(e)}
+                        className={isClickable}> 
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
     )

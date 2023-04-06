@@ -4,7 +4,7 @@
   --light-purple: #b4afb7;
   --border-radius: 20px;
   --cursive-font: 'Dancing Script', cursive;
-
+  --main-background: url('./img/iStock-1185906653MED.jpg');
 }
 body {
   height: 100vh;
@@ -21,7 +21,7 @@ body {
 /* BLOG POSTS */
 .blog-posts {
   min-width: 83%;
-  background-image: url('./img/iStock-1185906653MED.jpg');
+  background-image: var(--main-background);
   background-size: contain;
   background-repeat: repeat;
 
@@ -113,19 +113,73 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.log-in {
-  margin-top: 15px;
+.log-in, .can-click {
+  margin: 15px 0;
   width: 100px;
   height: 30px;
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--light-purple);
 }
-.enter:hover, .log-in:hover {
+button:hover {
   background-color: white;
 }
 button {
   cursor: pointer;
   font-family: var(--cursive-font);
   font-size: 20px;
+}
+/* BLOG POST PG */
+.blog-post-pg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: var(--main-background);  
+  height: 100%;
+}
+.create-comment {
+  font-family: var(--cursive-font);
+  background-color: var(--purple);
+  border: none;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  border-radius: var(--border-radius);
+  margin: 15px 0;
+}
+.create-comment form {
+  max-width: 250px;
+}
+.add-name {
+  margin-top: 15px;
+}
+.add-name, .add-text {
+  display: flex;
+  flex-direction: column;
+}
+.add-name label, .add-text label {
+  color: white;
+  font-size: 20px;
+}
+#name {
+  height: 40px;
+}
+#comment {
+  height: 100px;
+}
+#name, #comment {
+  border-radius: var(--border-radius);
+  border: none;
+  width: 220px;
+}
+textarea {
+  vertical-align: top;
+  padding: 7px;
+}
+.submit-comment-container {
+  display: flex;
+  justify-content: center;
 }

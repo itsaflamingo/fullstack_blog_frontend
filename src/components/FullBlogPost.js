@@ -19,7 +19,7 @@ export default function FullBlogPost() {
     }, [comments]);
 
     return (
-        <div id='blog-post-pg'>
+        <div className='blog-post-pg'>
             <BlogPost      post={post} />
             <CreateComment post={post} />
             <CommentsList  post={post} 

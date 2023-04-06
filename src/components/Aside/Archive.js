@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function Archive() {
 
+    // Get all published blog posts
     const { data, loading } = useFetch({api: 'https://fs-blog-backend.fly.dev/blog', method: 'GET'})
+    // Set up state to extract dates from blog posts
     const [dates, setDates] = useState(null);
-
+    // Set state to toggle dropdown
     const [expandedYear, setExpandedYear] = useState(null);
     const [expandedMonth, setExpandedMonth] = useState(null);
     const [expandedDay, setExpandedDay] = useState(null);
@@ -16,13 +18,17 @@ export default function Archive() {
     const nav = useNavigate();
     
     useEffect(() => {
+        // If data is loaded, send to createDatesDisplay, which returns object with nested date object
         if(loading === true) return;
         setDates(createDatesDisplay(data));
     }, [loading])
 
+    // Triggers when blog post name is clicked from archive
     const goToBlogPost = title => {
+        // Find clicked blog post
         const postArr = data.filter(blogPost => blogPost.title === title)
         const post = postArr[0];
+        // navigate to clicked blog post in separate route
         nav(`/post/${post._id}`, { state: post });
     }
 

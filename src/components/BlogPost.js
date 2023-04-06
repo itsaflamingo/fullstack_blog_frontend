@@ -24,7 +24,8 @@ export default function BlogPost({ post }) {
     
     return (
         <div className='blog-post'>
-            <h2 onClick={() => visitBlogPage()}>
+            <h2 className='clickable' 
+            onClick={() => visitBlogPage()}>
                 {post.title}         </h2>
             <p> {post.body}          </p>
             <p> {post.date_formatted}</p>
