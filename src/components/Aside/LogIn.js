@@ -6,6 +6,7 @@ export default function LogIn() {
 
     const [user, setUser] = useState({ username: '', password: '' });
     const loggedUser = useContext(UserContext);
+    const [openForm, setOpenForm] = useState(false);
     const nav = useNavigate();
 
     const logIn = e => {
@@ -38,7 +39,9 @@ export default function LogIn() {
 
     return (
         <div className="change-auth">
-            <form>
+            <button className="enter"
+            onClick={() => {setOpenForm(!openForm)}}>Enter</button>
+            {openForm && <form className="login-form">
                 <div className="username">
                     <span className="error"></span>
                     <label htmlFor="username">Username</label>
@@ -59,7 +62,7 @@ export default function LogIn() {
                 type='submit'
                 className="log-in"
                 onClick={e => logIn(e)}>Log In</button>
-            </form>
+            </form>}
         </div>
     )
 }

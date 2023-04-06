@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import useFetch from "../useFetch"
 import createDatesDisplay from "./formatDates";
 import uniqid from 'uniqid';
+import { useNavigate } from "react-router-dom";
 
 export default function Archive() {
 
@@ -12,38 +13,48 @@ export default function Archive() {
     const [expandedMonth, setExpandedMonth] = useState(null);
     const [expandedDay, setExpandedDay] = useState(null);
 
+    const nav = useNavigate();
+    
     useEffect(() => {
         if(loading === true) return;
         setDates(createDatesDisplay(data));
     }, [loading])
 
+    const goToBlogPost = title => {
+        const postArr = data.filter(blogPost => blogPost.title === title)
+        const post = postArr[0];
+        nav(`/post/${post._id}`, { state: post });
+    }
+
   return (
-    <div className="archive">
+    <div className="archive-container">
+        <h3>Archive</h3>
       {dates && Object.keys(dates).map((year) => (
-        <div key={year}>
-          <div onClick={expandedYear ? () => setExpandedYear(null) : () => setExpandedYear(year)}>
+        <div className='archive'key={year}>
+          <div className="clickable" onClick={expandedYear ? () => setExpandedYear(null) : () => setExpandedYear(year)}>
             {year} {expandedYear === year ? "▲" : "▼"}
           </div>
           {expandedYear === year && (
             <>
               {Object.keys(dates[year]).map((month) => (
                 <div key={`${year}-${month}`}>
-                  <div onClick={expandedMonth ? () => setExpandedMonth(null) : () => setExpandedMonth(month)}>
+                  <div className="clickable" onClick={expandedMonth ? () => setExpandedMonth(null) : () => setExpandedMonth(month)}>
                     {month} {expandedMonth === month ? "▲" : "▼"}
                   </div>
                   {expandedMonth === month && (
                     <>
                       {Object.keys(dates[year][month]).map((day) => (
                         <div key={uniqid()}>
-                          <div onClick={expandedDay ? () => setExpandedDay(null) : () => setExpandedDay(day)}>
+                          <div className="clickable" onClick={expandedDay ? () => setExpandedDay(null) : () => setExpandedDay(day)}>
                             {day} {expandedDay === day ? "▲" : "▼"}
                           </div>
                           {expandedDay === day && (
-                            <ul>
+                            <div>
                               {dates[year][month][day].map((post) => (
-                                <li key={uniqid()}>{post}</li>
+                                <div key={uniqid()}
+                                onClick={() => goToBlogPost(post)}>{post}</div>
                               ))}
-                            </ul>
+                            </div>
                           )}
                         </div>
                       ))}

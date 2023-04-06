@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+* {
+  --purple: #48404D;
+  --light-purple: #b4afb7;
+  --border-radius: 20px;
+  --cursive-font: 'Dancing Script', cursive;
+
+}
 body {
   height: 100vh;
   margin: 0;
@@ -24,16 +32,100 @@ body {
 .blog-post {
   background-color: white;
   border-radius: 20px;
-  border: 1px solid #48404D;
+  border: 1px solid var(--purple);
   min-width: 700px;
   margin-top: 15px;
-  color: #48404D;
+  color: var(--purple);
 }
 /* ASIDE */
 .aside {
-  background-color: #48404D;
+  min-width: 260px;
+  background-color: var(--purple);
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--cursive-font);
+}
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .aside-img {
   max-width: 150px;
+  border-radius: 20px;
+}
+.clickable:hover {
+  cursor: pointer;
+}
+.archive-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.archive-container h3 {
+  font-size: 25px;
+}
+.archive .clickable:hover {
+  background-color: white;
+  color: var(--purple);
+  border-radius: 20px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+.archive {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.enter {
+  background-color: var(--light-purple);
+  width: 100px;
+  height: 40px;
+  color: var(--purple);
+  border: none;
+  border-radius: 20px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.change-auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+#username, #password{
+  height: 25px;
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 5px;
+}
+.username, .password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.log-in {
+  margin-top: 15px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--light-purple);
+}
+.enter:hover, .log-in:hover {
+  background-color: white;
+}
+button {
+  cursor: pointer;
+  font-family: var(--cursive-font);
+  font-size: 20px;
 }
