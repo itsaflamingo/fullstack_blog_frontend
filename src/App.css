@@ -51,6 +51,9 @@ body {
   color: var(--purple);
   padding: 15px;
 }
+.public-date {
+  font-family: var(--cursive-font);
+}
 /* ASIDE */
 .aside {
   min-width: 360px;

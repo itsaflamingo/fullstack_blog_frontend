@@ -24,11 +24,11 @@ export default function BlogPost({ post }) {
     
     return (
         <div className='blog-post'>
-            <h2 className='clickable' 
+            <h2 className='clickable public-title' 
             onClick={() => visitBlogPage()}>
-                {post.title}         </h2>
-            <p> {post.body}          </p>
-            <p> {post.date_formatted}</p>
+            {post.title}</h2>
+            <p className="public-body">{post.body}</p>
+            <p className="public-date">{post.date_formatted}</p>
             <div className="edit-btns">
                 {user.user.username && <button className='edit-post' onClick={visitEdit}>Edit</button>}
                 {user.user.username && <button className='delete-post' onClick={deletePost}>Delete</button>}
