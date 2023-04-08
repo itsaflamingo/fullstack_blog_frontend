@@ -9,6 +9,7 @@ import LogOut from './LogOut';
 import { useNavigate } from 'react-router-dom';
 import BlogName from './BlogName';
 import EditDescription from './EditDescription';
+import githubIcon from '../../img/github-icon.png';
 
 export default function Aside() {
 
@@ -48,6 +49,10 @@ export default function Aside() {
                 <div className='auth-section'>
                     {user.user.username ? <LogOut /> : <LogIn />}
                 </div>
+                <a className='github-link' href="https://github.com/itsaflamingo" target="_blank" rel='noreferrer'>
+                    <img className='github' src={githubIcon} alt='github-link' />
+                    <p className='github-name'>itsaflamingo</p>
+                </a>
             </div>
         </BlogInfoContext.Provider>
     )
