@@ -81,7 +81,7 @@ export default function EditBlogPost() {
                     onChange={() => checkBoxOnChange()}></input>
                 </label>
                 <div className="edit-submit-container">
-                    <button type='submit'
+                    <button type='submit' className="edit-submit-btn"
                     onClick={e => onSubmit(e)}>Submit</button>
                 </div>
             </form>

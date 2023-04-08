@@ -227,6 +227,8 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .create-blog-post label {
   font-family: var(--cursive-font);
@@ -268,7 +270,7 @@ textarea {
   display: flex;
   justify-content: center;
 }
-.edit-post, .delete-post, .new-post-submit {
+.edit-post, .delete-post, .new-post-submit, .edit-submit-btn, .delete-comment {
   margin: 15px 0;
   width: 100px;
   height: 30px;
