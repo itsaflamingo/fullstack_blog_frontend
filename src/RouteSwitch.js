@@ -17,7 +17,7 @@ const RouteSwitch = () => {
         <ThemeContext.Provider value={{theme, setTheme}}>
             <UserContext.Provider value={{user, setUser}}>
                 <CommentContext.Provider value={{comments, setComments}}>
-                    <BrowserRouter>
+                    <BrowserRouter basename={process.env.PUBLIC_URL}>
                         <Routes>
                             <Route path='/' element={<Blog />}></Route>
                             <Route path='/post/:id' element={<FullBlogPost />}></Route>
