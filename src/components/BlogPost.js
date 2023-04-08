@@ -29,9 +29,10 @@ export default function BlogPost({ post }) {
                 {post.title}         </h2>
             <p> {post.body}          </p>
             <p> {post.date_formatted}</p>
-
-            {user.user.username && <button onClick={visitEdit}>Edit</button>}
-            {user.user.username && <button onClick={deletePost}>Delete</button>}
+            <div className="edit-btns">
+                {user.user.username && <button className='edit-post' onClick={visitEdit}>Edit</button>}
+                {user.user.username && <button className='delete-post' onClick={deletePost}>Delete</button>}
+            </div>
         </div>
     )
 }

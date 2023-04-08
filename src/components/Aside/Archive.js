@@ -57,7 +57,7 @@ export default function Archive() {
                           {expandedDay === day && (
                             <div>
                               {dates[year][month][day].map((post) => (
-                                <div key={uniqid()}
+                                <div key={uniqid()} className="clickable"
                                 onClick={() => goToBlogPost(post)}>{post}</div>
                               ))}
                             </div>

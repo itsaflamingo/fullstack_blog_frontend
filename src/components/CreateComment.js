@@ -75,7 +75,7 @@ export default function CreateComment({ post }) {
             <form>
                 <div className="add-name">
                     <span className="error">{errors.name}</span>
-                    <label htmlFor="name">Name</label>
+                    <label className='name-label' htmlFor="name">Name</label>
                     <input
                     type='text'
                     id='name'
@@ -83,7 +83,7 @@ export default function CreateComment({ post }) {
                 </div>
                 <div className="add-text">
                     <span className='error'>{errors.comment}</span>
-                    <label htmlFor="comment">Comment</label>
+                    <label className='comment-label' htmlFor="comment">Comment</label>
                     <textarea 
                     id='comment' 
                     onChange={e => onChangeHandler(e)}></textarea>

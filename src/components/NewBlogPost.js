@@ -46,25 +46,25 @@ export default function NewBlogPost() {
 
     return (
         <div className="create-blog-post">
-            <form>
-                <label htmlFor='title'> Title
-                    <input id="title"
+            <form className="create-post-form">
+                <label htmlFor='title'>Title</label>
+                <input id="title"
                     type='text'
-                    onChange={e => titleOnChange(e)}></input>
-                </label>
-                <label htmlFor='body'> Body
-                    <input id="body"
-                    type='textarea'
-                    onChange={e => bodyOnChange(e)}></input>
-                </label>    
-                <label htmlFor='is-published'> Publish
+                    onChange={e => titleOnChange(e)}/>
+                <label htmlFor='body'>Body</label>    
+                <textarea id="body"
+                    onChange={e => bodyOnChange(e)}/>
+                <div className="is-published-container">
+                    <label htmlFor='is-published'>Publish</label>
                     <input id='is-published'
-                    type='checkbox'
-                    value={input.publish}
-                    onChange={checkBoxOnChange}></input>
-                </label>
-                <button type='submit'
-                onClick={e => onSubmit(e)}>Submit</button>
+                        type='checkbox'
+                        value={input.publish}
+                        onChange={checkBoxOnChange}/>
+                </div>
+                <div className="new-post-submit-container">
+                    <button type='submit' className="new-post-submit"
+                    onClick={e => onSubmit(e)}>Submit</button>
+                </div>
             </form>
         </div>
     )

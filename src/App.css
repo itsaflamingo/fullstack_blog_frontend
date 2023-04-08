@@ -5,6 +5,7 @@
   --border-radius: 20px;
   --cursive-font: 'Dancing Script', cursive;
   --main-background: url('./img/iStock-1185906653MED.jpg');
+  --yellow: rgb(174, 165, 51)
 }
 body {
   height: 100vh;
@@ -15,9 +16,20 @@ body {
 #root {
   height: 100%;
 }
-.blog {
+.blog, .blog-posts-secure {
   display: flex;
   justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+.posts-secure-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+.blog-secure {
+  width: 100%;
   height: 100%;
 }
 /* BLOG POSTS */
@@ -37,19 +49,29 @@ body {
   min-width: 700px;
   margin-top: 15px;
   color: var(--purple);
+  padding: 15px;
 }
 /* ASIDE */
 .aside {
-  min-width: 260px;
+  min-width: 360px;
   background-color: var(--purple);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   font-family: var(--cursive-font);
+  justify-content: space-between;
+  overflow: scroll;
+  position: fixed;
+  left: 77%;
+  height: 100%;
 }
 .blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aside-blog {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +92,7 @@ body {
   font-size: 25px;
 }
 .archive .clickable:hover {
-  background-color: white;
+  background-color: var(--yellow);
   color: var(--purple);
   border-radius: 20px;
   width: 60px;
@@ -114,7 +136,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.log-in, .can-click {
+.log-in, .can-click, .log-out, .new-post, .edit-info {
   margin: 15px 0;
   width: 100px;
   height: 30px;
@@ -123,7 +145,7 @@ body {
   background-color: var(--light-purple);
 }
 button:hover {
-  background-color: white;
+  background-color: var(--yellow);
 }
 button {
   cursor: pointer;
@@ -147,7 +169,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
+  min-height: 280px;
   border-radius: var(--border-radius);
   margin-top: 15px;
   padding: 15px 0;
@@ -165,6 +187,9 @@ button {
 .add-name label, .add-text label {
   color: white;
   font-size: 20px;
+}
+.name-label, .comment-label {
+  margin: 5px;
 }
 #name {
   height: 40px;
@@ -192,4 +217,111 @@ textarea {
   margin: 15px 0;
   border-radius: var(--border-radius);
   padding: 0 15px;
+}
+/* BLOG SECURE */
+/* NEW POST PAGE */
+.create-blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-blog-post label {
+  font-family: var(--cursive-font);
+  font-size: 20px;
+}
+.create-blog-post form {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid var(--purple);
+  min-width: 700px;
+  margin-top: 15px;
+  color: var(--purple);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.title-container, .body-container {
+  display: flex;
+  flex-direction: column;
+} 
+.title-container, .body-container, .checkbox-container {
+  font-family: var(--cursive-font);
+  font-size: 25px;
+}
+#title, #body {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--purple);
+  padding: 7px;
+}
+#title {
+  height: 40px;
+  font-size: 20px;
+}
+#body {
+  height: 400px;
+  min-width: 600px;
+}
+.edit-submit-container {
+  display: flex;
+  justify-content: center;
+}
+.edit-post, .delete-post, .new-post-submit {
+  margin: 15px 0;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--purple);
+  color: white;
+}
+.edit-post:hover, .delete-post:hover {
+  background-color: var(--yellow);
+  color: var(--purple);
+}
+.new-post-submit:hover {
+  background-color: var(--yellow);
+  color: var(--purple);
+}
+.edit-btns {
+  display: flex;
+  gap: 15px;
+}
+.new-post-submit-container {
+  display: flex;
+  justify-content: center;
+}
+/* BLOG_SECURE ASIDE */
+.bloginfo-form-container {
+  width: 100%;
+  background-color: var(--light-purple);
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+.edit-description-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-input-container, .picture-input-container, .description-input-container {
+  display: flex;
+  flex-direction: column;
+}
+.title-input-container label, .picture-input-container label, .description-input-container label {
+  color: var(--purple);
+}
+#blog-title, #picture-url, #blog-description {
+  border-radius: 20px;
+  border: none;
+}
+#blog-title, #picture-url {
+  height: 25px;
+}
+#blog-description {
+  height: 50px;
+  width: 200px;
+  padding: 7px;
 }

@@ -8,11 +8,13 @@ import LogIn from './LogIn';
 import LogOut from './LogOut';
 import { useNavigate } from 'react-router-dom';
 import BlogName from './BlogName';
+import EditDescription from './EditDescription';
 
 export default function Aside() {
 
     const { data, loading } = useFetch({ api: 'https://fs-blog-backend.fly.dev/blog/description', method: 'GET'});
     const [blogInfo, setBlogInfo] = useState(BlogInfoContext);
+    const [openEditInfo, setOpenEditInfo] = useState(false);
     const user = useContext(UserContext);
 
     const nav = useNavigate();
@@ -27,14 +29,22 @@ export default function Aside() {
 
     return (
         <BlogInfoContext.Provider value={{blogInfo, setBlogInfo}}>
-            {user.user.username && <button onClick={() => navToCreatePost()}>New</button>}
             <div className='aside'>
+            <div className='aside-blog'>
+                {user.user.username && <button className='new-post'
+                onClick={() => navToCreatePost()}>New</button>}
+                
                 <div className='blog-section'>
                     <BlogName />
                     <Picture />
                     <Description />
                     <Archive />
                 </div>
+                </div>
+                {user.user.username && 
+                <button className='edit-info'
+                onClick={() => setOpenEditInfo(!openEditInfo)}>Edit</button>}
+                {openEditInfo && <EditDescription />}
                 <div className='auth-section'>
                     {user.user.username ? <LogOut /> : <LogIn />}
                 </div>

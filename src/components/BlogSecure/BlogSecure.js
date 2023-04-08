@@ -2,7 +2,6 @@ import BlogPost from "../BlogPost";
 import useFetch from "../useFetch";
 import uniqid from 'uniqid';
 import Aside from "../Aside/Aside";
-import { useEffect } from "react";
 
 export default function BlogSecure() {
 
@@ -18,14 +17,18 @@ export default function BlogSecure() {
     
     return (
         <div className="blog-secure">
-            {!loading && data.map(post => {
-                return (
-                    <div className='blog-post' key={uniqid()}>
-                        <BlogPost post={post} />
-                    </div>
-                )
-            })}
-            <Aside />
+            <div className="blog-posts-secure">
+                <div className="posts-secure-list">
+                    {!loading && data.map(post => {
+                        return (
+                            <div className='blog-post-container' key={uniqid()}>
+                                <BlogPost post={post} />
+                            </div>
+                        )
+                    })}
+                </div>
+                <Aside />
+            </div>
         </div>
     )
 }

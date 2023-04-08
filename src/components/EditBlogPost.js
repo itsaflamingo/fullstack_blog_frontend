@@ -55,35 +55,35 @@ export default function EditBlogPost() {
               },
             body: formData
         })
-            .then(res => res.json())
-            .then(data => console.log(data))
             .catch(err => console.log(err));
         nav('/blog-secure');
     }
 
     return (
         <div className="create-blog-post">
-            <form>
-                <label htmlFor='title'> Title
-                    <input id="title"
+            <form className="create-blog-post-form">
+                <label htmlFor='title'className="title-container"> Title
+                    <input id="title" 
                     type='text'
                     value={loading ? '' : input.title}
                     onChange={e => titleOnChange(e)}></input>
                 </label>
-                <label htmlFor='body'> Body
-                    <input id="body"
+                <label htmlFor='body' className="body-container"> Body
+                    <textarea id="body"
                     type='textarea'
                     value={loading ? '' : input.body}
-                    onChange={e => bodyOnChange(e)}></input>
+                    onChange={e => bodyOnChange(e)}></textarea>
                 </label>    
-                <label htmlFor='is-published'> Publish
+                <label htmlFor='is-published' className="checkbox-container"> Publish
                     <input id='is-published'
                     type='checkbox'
                     value={loading ? false : input.published}
                     onChange={() => checkBoxOnChange()}></input>
                 </label>
-                <button type='submit'
-                onClick={e => onSubmit(e)}>Submit</button>
+                <div className="edit-submit-container">
+                    <button type='submit'
+                    onClick={e => onSubmit(e)}>Submit</button>
+                </div>
             </form>
         </div>
     )

@@ -8,6 +8,7 @@ export default function Description() {
     return (
         <div className="blog-description">
             {info.blogInfo[0] !== undefined && <p>{info.blogInfo[0].description}</p>}
+
         </div>
     )
 }

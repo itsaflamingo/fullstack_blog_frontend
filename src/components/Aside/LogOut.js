@@ -14,8 +14,9 @@ export default function LogOut() {
     }
 
     return (
-        <div className="log-out">
-            <button onClick={() => logOut()}>Log Out</button>
+        <div className="log-out-container">
+            <button className='log-out'
+            onClick={() => logOut()}>Log Out</button>
         </div>
     )
 }
