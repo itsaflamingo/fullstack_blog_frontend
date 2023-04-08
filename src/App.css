@@ -50,13 +50,30 @@ body {
   margin-top: 15px;
   color: var(--purple);
   padding: 15px;
+  transform: translate(-20px, -10px);
+  animation: slideAndFadeRight 3s ease-in-out 0s 1 forwards;
+}
+/* delay each element by 0.1s multiplied by its index */
+.blog-post:nth-child(n) {
+  animation-delay: calc(0.1s * (n - 1)); 
+}
+@keyframes slideAndFadeRight {
+  0% {
+    opacity: 0;
+    transform: translate(-20px, -10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 .public-date {
   font-family: var(--cursive-font);
 }
 /* ASIDE */
 .aside {
-  min-width: 360px;
+  min-width: 250px;
   background-color: var(--purple);
   color: white;
   display: flex;
@@ -66,8 +83,21 @@ body {
   justify-content: space-between;
   overflow: scroll;
   position: fixed;
-  left: 77%;
   height: 100%;
+  right: 0;
+  animation: slideAndFadeLeft 3s ease-in-out 0s 1 forwards;
+}
+@keyframes slideAndFadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+    right: -100%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    right: 0;
+  }
 }
 .blog-section {
   display: flex;
@@ -82,6 +112,9 @@ body {
 .aside-img {
   max-width: 150px;
   border-radius: 20px;
+}
+.clickable {
+  transition: all 0.5s ease-out;
 }
 .clickable:hover {
   cursor: pointer;
@@ -139,13 +172,17 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.log-in, .can-click, .log-out, .new-post, .edit-info {
+.aside button {
   margin: 15px 0;
   width: 100px;
   height: 30px;
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--light-purple);
+}
+.submit-bloginfo {
+  background-color: var(--purple);
+  color: white;
 }
 button:hover {
   background-color: var(--yellow);
@@ -154,6 +191,7 @@ button {
   cursor: pointer;
   font-family: var(--cursive-font);
   font-size: 20px;
+  transition: all 0.5s ease-out;
 }
 /* BLOG POST PG */
 .blog-post-pg {
