@@ -368,3 +368,35 @@ textarea {
   width: 200px;
   padding: 7px;
 }
+@media (max-width: 620px) {
+  .blog {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .aside {
+    max-height: 100px;
+    top: 0;
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+  }
+  .aside-blog {
+    width: 100%;
+    display: flex;
+  }
+  .blog-section {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .blog-picture {
+    display: none;
+  }
+  .blog-posts {
+    margin-top: 100px;
+  }
+  .blog-post-container {
+    max-width: 80%;
+  }
+}
