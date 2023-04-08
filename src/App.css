@@ -46,7 +46,7 @@ body {
   background-color: white;
   border-radius: 20px;
   border: 1px solid var(--purple);
-  min-width: 700px;
+  max-width: 700px;
   margin-top: 15px;
   color: var(--purple);
   padding: 15px;
@@ -70,6 +70,16 @@ body {
 }
 .public-date {
   font-family: var(--cursive-font);
+}
+.public-body, .comment-wrapper {
+  white-space: pre-line;
+}
+.posts-secure-list .public-body {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: pre-line;
 }
 /* ASIDE */
 .aside {
@@ -250,6 +260,16 @@ textarea {
 .submit-comment-container {
   display: flex;
   justify-content: center;
+}
+.submit-comment-container button {
+  background-color: var(--light-purple);
+  width: 100px;
+  height: 40px;
+  color: var(--purple);
+  border: none;
+  border-radius: 20px;
+  font-weight: 900;
+  margin: 15px 0;
 }
 .comment-wrapper {
   background-color: var(--light-purple);
