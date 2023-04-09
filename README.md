@@ -1,8 +1,8 @@
 # Fullstack Blog
 Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React
 
-[Live Demo](https://itsaflamingo.github.io/fullstack_blog_frontend/) :point_left:
-[Link to Backend](https://github.com/itsaflamingo/full_stack_blog_backend)
+- [Live Demo](https://itsaflamingo.github.io/fullstack_blog_frontend/) :point_left:
+- [Link to Backend](https://github.com/itsaflamingo/full_stack_blog_backend)
 
 ### Features
 
