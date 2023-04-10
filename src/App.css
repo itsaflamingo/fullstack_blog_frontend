@@ -49,13 +49,11 @@ body {
   margin-top: 15px;
   color: var(--purple);
   padding: 15px;
+}
+.blog-post, .comment, .blog-post-menu {
   transform: translate(-20px, -10px);
   animation: slideAndFadeRight 1s ease-in-out 0s 1 forwards;
-}
-/* delay each element by 0.1s multiplied by its index */
-.blog-post:nth-child(n) {
-  animation-delay: calc(0.1s * (n - 1)); 
-}
+} 
 @keyframes slideAndFadeRight {
   0% {
     opacity: 0;
