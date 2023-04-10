@@ -34,7 +34,6 @@ export default function Aside() {
             <div className='aside-blog'>
                 {user.user.username && <button className='new-post'
                 onClick={() => navToCreatePost()}>New</button>}
-                
                 <div className='blog-section'>
                     <BlogName />
                     <Picture />

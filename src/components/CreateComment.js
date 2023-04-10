@@ -2,8 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { CommentContext } from "./Contexts";
 import hasProfanity from './hasProfanity'
 
-export default function CreateComment({ post }) {
+export default function CreateComment(props) {
 
+    const { post, viewCommentForm, setViewCommentForm } = props;
     // Prevent click when input is empty
     const [isClickable, setIsClickable] = useState('no-click');
     const [comment, setComment] = useState({ name: '', comment: ''});
@@ -59,6 +60,8 @@ export default function CreateComment({ post }) {
         })
             .then(res => res.json())
             .then(data => setComments([...comments, data]))
+            .then(() => setComment({ name: '', comment: '' }))
+            .then(() => setViewCommentForm(!viewCommentForm))
             .catch(err => console.log(err))
     }
 

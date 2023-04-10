@@ -4,6 +4,7 @@ import BlogPost from './BlogPost';
 import CommentsList from './CommentsList';
 import { CommentContext } from './Contexts';
 import CreateComment from './CreateComment';
+import ViewPostPageMenu from './ViewPostPageMenu';
 
 export default function FullBlogPost() {
 
@@ -12,7 +13,8 @@ export default function FullBlogPost() {
     const post = location.state;
 
     const {comments, setComments} = useContext(CommentContext);
-    const [refreshComments, setRefreshComments] = useState(comments)
+    const [refreshComments, setRefreshComments] = useState(comments);
+    const [viewCreateComment, setViewCreateComment] = useState(false);
 
     useEffect(() => {
         setRefreshComments(comments);
@@ -20,11 +22,17 @@ export default function FullBlogPost() {
 
     return (
         <div className='blog-post-pg'>
-            <BlogPost      post={post} />
-            <CreateComment post={post} />
+            <div className='blog-post-and-menu'>
+                <BlogPost      post={post} />
+                <ViewPostPageMenu viewCommentForm={viewCreateComment} setViewCommentForm={setViewCreateComment} />
+            </div>
+            {viewCreateComment && <CreateComment 
+            post={post}
+            viewCommentForm={viewCreateComment}
+            setViewCommentForm={setViewCreateComment} />}
             <CommentsList  post={post} 
                            setRefreshComments={setRefreshComments} 
-                           refreshComments={refreshComments}/>
+                           refreshComments={refreshComments} />
         </div>
     )
 }
