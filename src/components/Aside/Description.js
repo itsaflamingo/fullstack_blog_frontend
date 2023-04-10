@@ -6,9 +6,8 @@ export default function Description() {
     const info = useContext(BlogInfoContext);
 
     return (
-        <div className="blog-description">
-            {info.blogInfo[0] !== undefined && <p>{info.blogInfo[0].description}</p>}
-
+        <div className="blog-description-container">
+            {info.blogInfo[0] !== undefined && <p className="blog-description">{info.blogInfo[0].description}</p>}
         </div>
     )
 }

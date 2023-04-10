@@ -40,7 +40,7 @@ export default function LogIn() {
     return (
         <div className="change-auth">
             <button className="enter"
-            onClick={() => {setOpenForm(!openForm)}}>Enter</button>
+            onClick={() => {setOpenForm(!openForm)}}>Log In</button>
             {openForm && <form className="login-form">
                 <div className="username">
                     <span className="error"></span>
@@ -61,7 +61,7 @@ export default function LogIn() {
                 <button 
                 type='submit'
                 className="log-in"
-                onClick={e => logIn(e)}>Log In</button>
+                onClick={e => logIn(e)}>Enter</button>
             </form>}
         </div>
     )

@@ -19,7 +19,7 @@ export default function EditBlogPost() {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/x-www-form-urlencoded'
         } 
-    })
+    });
 
     // Set onChange input as state
     const [input, setInput] = useState({});

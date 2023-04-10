@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CommentContext, UserContext } from "./Contexts";
 
 export default function Comment({ comment, post }) {

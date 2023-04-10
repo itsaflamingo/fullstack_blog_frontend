@@ -20,7 +20,7 @@ export default function EditDescription() {
 
         // Create new URL search params, convert to string
         const formData = new URLSearchParams({
-            title:       input.title,
+            name:       input.title,
             picture:     input.picture,
             description: input.description
         }).toString();
