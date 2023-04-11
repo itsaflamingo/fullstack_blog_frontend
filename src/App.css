@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&display=swap');
 * {
   --purple: #48404D;
   --light-purple: #b4afb7;
@@ -8,6 +8,7 @@
   --yellow: rgb(174, 165, 51)
 }
 body {
+  font-family: 'Handlee', cursive;
   height: 100vh;
   margin: 0;
   background-image: var(--main-background);
