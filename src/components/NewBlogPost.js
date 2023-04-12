@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import useFetch from "./useFetch";
+import { Editor } from '@tinymce/tinymce-react';
 
 export default function NewBlogPost() {
+
+    const editorRef = useRef(null);
 
     const [input, setInput] = useState({
         title: '',
@@ -14,7 +17,7 @@ export default function NewBlogPost() {
 
     // on input change 
     const titleOnChange = e => setInput({...input, title: e.target.value});
-    const bodyOnChange = e => setInput({...input, body: e.target.value});
+    const bodyOnChange = content => setInput({...input, body: content});
     const checkBoxOnChange = () => setInput({...input, publish: !input.publish});
     // on input submit 
 
@@ -51,14 +54,34 @@ export default function NewBlogPost() {
                 <input id="title"
                     type='text'
                     onChange={e => titleOnChange(e)}/>
-                <label htmlFor='body'>Body</label>    
-                <textarea id="body"
-                    onChange={e => bodyOnChange(e)}/>
+                <label htmlFor='body'>Body</label>
+                <>
+                <Editor
+                  apiKey={process.env.REACT_APP_TINY_API_KEY}
+                  onInit={(evt, editor) => editorRef.current = editor}
+                  className="body"
+                  onEditorChange={bodyOnChange}
+                  init={{
+                    height: 500,
+                    menubar: false,
+                    plugins: [
+                      'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                      'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                    ],
+                    toolbar: 'undo redo | blocks | ' +
+                      'bold italic forecolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                  }}
+                />
+                </>        
                 <div className="is-published-container">
                     <label htmlFor='is-published'>Publish</label>
                     <input id='is-published'
                         type='checkbox'
-                        value={input.publish}
+                        checked={input.publish}
                         onChange={checkBoxOnChange}/>
                 </div>
                 <div className="new-post-submit-container">

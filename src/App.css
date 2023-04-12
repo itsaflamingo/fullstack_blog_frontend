@@ -69,7 +69,7 @@ body {
 .public-date {
   font-family: var(--cursive-font);
 }
-.public-body, .comment-wrapper {
+.public-body, .comment-wrapper, .body {
   white-space: pre-line;
 }
 .posts-secure-list .public-body, 
@@ -356,11 +356,11 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-.title-container, .body-container {
+.title-container {
   display: flex;
   flex-direction: column;
 } 
-.title-container, .body-container, .checkbox-container {
+.title-container, .body, .checkbox-container {
   font-family: var(--cursive-font);
   font-size: 25px;
 }
@@ -373,7 +373,7 @@ textarea {
   height: 40px;
   font-size: 20px;
 }
-#body {
+.body {
   height: 400px;
   min-width: 600px;
 }

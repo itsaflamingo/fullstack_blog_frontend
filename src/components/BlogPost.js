@@ -27,7 +27,7 @@ export default function BlogPost({ post }) {
             <h2 className='clickable public-title' 
             onClick={() => visitBlogPage()}>
             {post.title}</h2>
-            <p className="public-body">{post.body}</p>
+            <p className="public-body" dangerouslySetInnerHTML={{__html: post.body}}></p>
             <p className="public-date">{post.date_formatted}</p>
             <div className="edit-btns">
                 {user.user.username && <button className='edit-post' onClick={visitEdit}>Edit</button>}

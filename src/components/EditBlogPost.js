@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom";
 import useFetch from "./useFetch";
+import { Editor } from '@tinymce/tinymce-react';
 
 export default function EditBlogPost() {
+
+    const editorRef = useRef(null);
 
     // Get id from location
     const location = useLocation();
@@ -29,11 +32,12 @@ export default function EditBlogPost() {
     useEffect(() => {
         if(loading === true) return;
         setInput(data);
+        console.log(input.published);
     }, [loading])
 
     // on input change 
     const titleOnChange = e => setInput({...input, title: e.target.value});
-    const bodyOnChange = e => setInput({...input, body: e.target.value});
+    const bodyOnChange = content => setInput({...input, body: content});
     const checkBoxOnChange = () => setInput({...input, publish: !input.publish});
     // on input submit 
     const onSubmit = e => {
@@ -68,16 +72,33 @@ export default function EditBlogPost() {
                     value={loading ? '' : input.title}
                     onChange={e => titleOnChange(e)}></input>
                 </label>
-                <label htmlFor='body' className="body-container"> Body
-                    <textarea id="body"
-                    type='textarea'
-                    value={loading ? '' : input.body}
-                    onChange={e => bodyOnChange(e)}></textarea>
-                </label>    
+                        <>
+                <Editor
+                  apiKey={process.env.REACT_APP_TINY_API_KEY}
+                  onInit={(evt, editor) => editorRef.current = editor}
+                  value={loading ? '' : input.body}
+                  className="body"
+                  onEditorChange={bodyOnChange}
+                  init={{
+                    height: 500,
+                    menubar: false,
+                    plugins: [
+                      'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                      'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                    ],
+                    toolbar: 'undo redo | blocks | ' +
+                      'bold italic forecolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                  }}
+                />
+                </>    
                 <label htmlFor='is-published' className="checkbox-container"> Publish
                     <input id='is-published'
                     type='checkbox'
-                    value={loading ? false : input.published}
+                    checked={loading ? false : input.published}
                     onChange={() => checkBoxOnChange()}></input>
                 </label>
                 <div className="edit-submit-container">
