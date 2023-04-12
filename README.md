@@ -17,7 +17,7 @@ Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React, TinyM
 ## Screenshots
 
 ![blog](./src/img/front.png)
-![edit](./src/img/edit.png)
+![edit](./src/img/edit-post.png)
 ![comment](./src/img/comments.png)
 
 ## Built With
