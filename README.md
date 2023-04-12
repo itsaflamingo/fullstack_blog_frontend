@@ -1,5 +1,5 @@
 # Fullstack Blog
-Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React
+Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React, TinyMCE
 
 - [Live Demo](https://itsaflamingo.github.io/fullstack_blog_frontend/) :point_left:
 - [Link to Backend](https://github.com/itsaflamingo/full_stack_blog_backend)
@@ -12,6 +12,7 @@ Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React
 - CRUD operations on blog posts
 - Sign out
 - Responsive design
+- TinyMCE rich text editor
 
 ## Screenshots
 
@@ -28,5 +29,6 @@ Blog created with Javascript, NodeJS, Express.js, Mongoose/MongoDB, React
 - [Mongoose.js](https://mongoosejs.com/)
 - [PassportJS](https://www.passportjs.org/)
 - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [TinyMCE](https://www.tiny.cloud/docs/tinymce/6/cloud-quick-start/)
 
 
