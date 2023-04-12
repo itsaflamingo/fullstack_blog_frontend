@@ -11,6 +11,7 @@ export default function Archive() {
     // Set up state to extract dates from blog posts
     const [dates, setDates] = useState(null);
     // Set state to toggle dropdown
+    const [expandArchive, setExpandArchive] = useState(null);
     const [expandedYear, setExpandedYear] = useState(null);
     const [expandedMonth, setExpandedMonth] = useState(null);
     const [expandedDay, setExpandedDay] = useState(null);
@@ -34,13 +35,16 @@ export default function Archive() {
 
   return (
     <div className="archive-container">
-        <h3>Archive</h3>
       {dates && Object.keys(dates).map((year) => (
         <div className='archive'key={year}>
-          <div className="clickable" onClick={expandedYear ? () => setExpandedYear(null) : () => setExpandedYear(year)}>
+          <h3 onClick={expandArchive ? () => setExpandArchive(null) : () => setExpandArchive(true)}>
+            Archive
+            {expandArchive === true ? "▲" : "▼"}
+            </h3>
+          {expandArchive === true && <div className="clickable" onClick={expandedYear ? () => setExpandedYear(null) : () => setExpandedYear(year)}>
             {year} {expandedYear === year ? "▲" : "▼"}
-          </div>
-          {expandedYear === year && (
+          </div>}
+          {(expandedYear === year && expandArchive === true) && (
             <>
               {Object.keys(dates[year]).map((month) => (
                 <div key={`${year}-${month}`}>

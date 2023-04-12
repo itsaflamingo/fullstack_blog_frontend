@@ -451,6 +451,7 @@ textarea {
     max-height: 100px;
     top: 0;
     display: flex;
+    flex-direction: row;
     width: 100%;
     font-size: 14px;
   }
@@ -461,9 +462,12 @@ textarea {
   .blog-section {
     display: flex;
     width: 100%;
-    justify-content: flex-start;
   }
-  .blog-picture {
+  .blog-picture, 
+  .blog-description-container, 
+  .github-name, 
+  .auth-section,
+  .github-link {
     display: none;
   }
   .blog-posts {
@@ -471,5 +475,14 @@ textarea {
   }
   .blog-post-container {
     max-width: 80%;
+  }
+  .blog-name {
+    font-size: 9px;
+  }
+  .archive-container {
+    font-size: 12px;
+  }
+  .archive h3 {
+    font-size: 16px;
   }
 }
