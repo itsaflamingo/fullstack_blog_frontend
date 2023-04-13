@@ -1,6 +1,5 @@
 import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import useFetch from "./useFetch";
 import { Editor } from '@tinymce/tinymce-react';
 
 export default function NewBlogPost() {

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "./Contexts";
+import { UserContext } from "../Contexts";
 
 export default function BlogPost({ post }) {
 

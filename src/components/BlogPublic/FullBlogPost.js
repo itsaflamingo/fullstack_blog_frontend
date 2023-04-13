@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import BlogPost from './BlogPost';
 import CommentsList from './CommentsList';
-import { CommentContext } from './Contexts';
+import { CommentContext } from '../Contexts';
 import CreateComment from './CreateComment';
 import ViewPostPageMenu from './ViewPostPageMenu';
 

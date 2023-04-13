@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 import { Editor } from '@tinymce/tinymce-react';
 
 export default function EditBlogPost() {
@@ -42,7 +42,6 @@ export default function EditBlogPost() {
     // on input submit 
     const onSubmit = e => {
         e.preventDefault();
-
         // Create new URL search params, convert to string
         const formData = new URLSearchParams({
             title:     input.title,

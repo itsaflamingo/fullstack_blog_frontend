@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route }  from 'react-router-dom';
 import Blog from './Blog'
 import BlogSecure from './components/BlogSecure/BlogSecure';
 import { CommentContext, ThemeContext, UserContext } from './components/Contexts';
-import EditBlogPost from './components/EditBlogPost';
-import FullBlogPost from './components/FullBlogPost';
-import NewBlogPost from './components/NewBlogPost';
+import EditBlogPost from './components/BlogSecure/EditBlogPost';
+import FullBlogPost from './components/BlogPublic/FullBlogPost';
+import NewBlogPost from './components/BlogSecure/NewBlogPost';
 
 const RouteSwitch = () => {
     // Set up context API state

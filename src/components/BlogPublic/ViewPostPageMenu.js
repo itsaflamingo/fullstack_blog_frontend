@@ -1,7 +1,7 @@
-import homeWhite from '../img/home.png';
-import homePurple from '../img/home-purple.png';
-import commentWhite from '../img/create-comment.png';
-import commentPurple from '../img/comment-purple.png';
+import homeWhite from '../../img/home.png';
+import homePurple from '../../img/home-purple.png';
+import commentWhite from '../../img/create-comment.png';
+import commentPurple from '../../img/comment-purple.png';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,6 @@ export default function ViewPostPageMenu({ viewCommentForm, setViewCommentForm }
     const [homeIcon, setHomeIcon] = useState(homeWhite);
     const [commentIcon, setCommentIcon] = useState(commentWhite);
     const nav = useNavigate();
-
 
     return (
         <div className="blog-post-menu">

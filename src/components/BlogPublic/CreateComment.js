@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { CommentContext } from "./Contexts";
-import hasProfanity from './hasProfanity'
+import { CommentContext } from "../Contexts";
+import hasProfanity from '../hasProfanity'
 
 export default function CreateComment(props) {
 

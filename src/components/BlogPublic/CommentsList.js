@@ -1,8 +1,8 @@
-import useFetch from './useFetch';
+import useFetch from '../useFetch';
 import Comment from './Comment';
 import uniqid from "uniqid";
 import { useContext, useEffect } from 'react';
-import { CommentContext } from './Contexts';
+import { CommentContext } from '../Contexts';
 
 export default function CommentsList(props) {
 

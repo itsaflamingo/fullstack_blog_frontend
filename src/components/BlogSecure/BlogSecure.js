@@ -1,4 +1,4 @@
-import BlogPost from "../BlogPost";
+import BlogPost from "../BlogPublic/BlogPost";
 import useFetch from "../useFetch";
 import uniqid from 'uniqid';
 import Aside from "../Aside/Aside";

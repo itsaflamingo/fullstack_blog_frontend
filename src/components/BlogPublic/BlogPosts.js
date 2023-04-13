@@ -1,5 +1,5 @@
 import BlogPost from "./BlogPost";  
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 export default function BlogPosts() {
 
