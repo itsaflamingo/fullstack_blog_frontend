@@ -148,15 +148,21 @@ body {
 .archive .clickable:hover {
   background-color: var(--yellow);
   color: var(--purple);
-  border-radius: 20px;
-  width: 60px;
+  border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
+}
+.archive .clickable {
+  padding: 5px;
 }
 .archive {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+}
+.archive h3 {
+  margin: 0;
 }
 .enter {
   background-color: var(--light-purple);

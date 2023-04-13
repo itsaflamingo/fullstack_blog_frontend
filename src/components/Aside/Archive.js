@@ -37,7 +37,7 @@ export default function Archive() {
     <div className="archive-container">
       {dates && Object.keys(dates).map((year) => (
         <div className='archive'key={year}>
-          <h3 onClick={expandArchive ? () => setExpandArchive(null) : () => setExpandArchive(true)}>
+          <h3 className='clickable' onClick={expandArchive ? () => setExpandArchive(null) : () => setExpandArchive(true)}>
             Archive
             {expandArchive === true ? "▲" : "▼"}
             </h3>
