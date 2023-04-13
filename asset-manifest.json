@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/fullstack_blog_frontend/static/css/main.53be4bce.css",
-    "main.js": "/fullstack_blog_frontend/static/js/main.082d5a9d.js",
+    "main.css": "/fullstack_blog_frontend/static/css/main.3411164b.css",
+    "main.js": "/fullstack_blog_frontend/static/js/main.92fc3499.js",
     "static/media/iStock-1185906653MED.jpg": "/fullstack_blog_frontend/static/media/iStock-1185906653MED.344228c5eb18e55fd23f.jpg",
     "index.html": "/fullstack_blog_frontend/index.html",
-    "main.53be4bce.css.map": "/fullstack_blog_frontend/static/css/main.53be4bce.css.map",
-    "main.082d5a9d.js.map": "/fullstack_blog_frontend/static/js/main.082d5a9d.js.map"
+    "main.3411164b.css.map": "/fullstack_blog_frontend/static/css/main.3411164b.css.map",
+    "main.92fc3499.js.map": "/fullstack_blog_frontend/static/js/main.92fc3499.js.map"
   },
   "entrypoints": [
-    "static/css/main.53be4bce.css",
-    "static/js/main.082d5a9d.js"
+    "static/css/main.3411164b.css",
+    "static/js/main.92fc3499.js"
   ]
 }
