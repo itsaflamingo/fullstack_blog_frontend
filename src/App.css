@@ -48,7 +48,7 @@ body {
   border: 1px solid var(--purple);
   max-width: 700px;
   width: 50vw;
-  margin-top: 15px;
+  margin: 15px;
   color: var(--purple);
   padding: 15px;
 }
@@ -72,6 +72,13 @@ body {
 }
 .public-body, .comment-wrapper, .body {
   white-space: pre-line;
+}
+.public-body {
+  padding: 5px;
+  word-wrap: break-word;
+}
+.public-body p, .public-body ul {
+  margin: 0;
 }
 .posts-secure-list .public-body, 
 .blog-posts .public-body {

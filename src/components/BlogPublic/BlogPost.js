@@ -9,7 +9,6 @@ export default function BlogPost({ post }) {
 
     const token = process.env.REACT_APP_BEARER_TOKEN;
 
-    const visitBlogPage = () => nav(`/post/${post.id}`, { state: post });
     const visitEdit = () => nav(`/blog-secure/post/${post.id}/edit`, { state: post });
     const deletePost = () => {
         fetch(`https://fs-blog-backend.fly.dev/blog-secure/post/${post.id}/delete`, {
@@ -23,9 +22,8 @@ export default function BlogPost({ post }) {
     }
     
     return (
-        <div className='blog-post'>
-            <h2 className='clickable public-title' 
-            onClick={() => visitBlogPage()}>
+        <div className='clickable blog-post' onClick={() => nav(`/post/${post.id}`, { state: post })}>
+            <h2 className='public-title'>
             {post.title}</h2>
             <p className="public-body" dangerouslySetInnerHTML={{__html: post.body}}></p>
             <p className="public-date">{post.date_formatted}</p>
