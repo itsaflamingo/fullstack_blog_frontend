@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fullstack_blog_frontend/static/css/main.30651543.css",
-    "main.js": "/fullstack_blog_frontend/static/js/main.6ff4201c.js",
+    "main.js": "/fullstack_blog_frontend/static/js/main.e9a2b9a2.js",
     "static/media/iStock-1185906653MED.jpg": "/fullstack_blog_frontend/static/media/iStock-1185906653MED.344228c5eb18e55fd23f.jpg",
     "index.html": "/fullstack_blog_frontend/index.html",
     "main.30651543.css.map": "/fullstack_blog_frontend/static/css/main.30651543.css.map",
-    "main.6ff4201c.js.map": "/fullstack_blog_frontend/static/js/main.6ff4201c.js.map"
+    "main.e9a2b9a2.js.map": "/fullstack_blog_frontend/static/js/main.e9a2b9a2.js.map"
   },
   "entrypoints": [
     "static/css/main.30651543.css",
-    "static/js/main.6ff4201c.js"
+    "static/js/main.e9a2b9a2.js"
   ]
 }
