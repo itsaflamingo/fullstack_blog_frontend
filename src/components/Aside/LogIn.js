@@ -7,6 +7,7 @@ export default function LogIn() {
     const [user, setUser] = useState({ username: '', password: '' });
     const loggedUser = useContext(UserContext);
     const [openForm, setOpenForm] = useState(false);
+    const [error, setError] = useState('');
     const nav = useNavigate();
 
     const logIn = e => {
@@ -29,9 +30,8 @@ export default function LogIn() {
         })
             .then(res => res.json())
             .then(data => loggedUser.setUser(data.user))
-            .catch(err => console.log(err))
-        
-        nav('/blog-secure');
+            .catch(err => setError(err));
+                        
     }
 
     const usernameChangeHandler = e => setUser({ ...user, username: e.target.value });
@@ -43,7 +43,7 @@ export default function LogIn() {
             onClick={() => {setOpenForm(!openForm)}}>Log In</button>
             {openForm && <form className="login-form">
                 <div className="username">
-                    <span className="error"></span>
+                    <span className="error">{error}</span>
                     <label htmlFor="username">Username</label>
                     <input
                     type='text'
@@ -51,7 +51,6 @@ export default function LogIn() {
                     onChange={e => usernameChangeHandler(e)}></input>
                 </div>
                 <div className="password">
-                    <span className="error"></span>
                     <label htmlFor="password">Password</label>
                     <input
                     type='password'
