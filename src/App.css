@@ -111,14 +111,10 @@ body::before {
 }
 /* ASIDE */
 .aside {
-  width: 20vw;
-  min-width: 250px;
   color: white;
   display: flex;
   font-family: var(--cursive-font);
   justify-content: center;
-  height: 100%;
-  right: 0;
   animation: slideAndFadeDown 1s ease-in-out 0s 1 forwards;
 }
 @keyframes slideAndFadeDown {
@@ -137,6 +133,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .blog-description-container {
   max-width: 150px;
@@ -419,15 +416,11 @@ a {
     height: 100vh;
   }
   .aside {
-    max-height: 100px;
     top: 0;
     display: flex;
-    flex-direction: row;
-    width: 100%;
     font-size: 14px;
   }
   .aside-blog {
-    width: 100%;
     display: flex;
   }
   .blog-section {
