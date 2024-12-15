@@ -71,7 +71,6 @@ body::before {
   padding: 15px;
 }
 .blog-post,
-.comment,
 .blog-post-menu {
   transform: translate(-20px, -10px);
   animation: slideAndFadeRight 1s ease-in-out 0s 1 forwards;
@@ -91,7 +90,6 @@ body::before {
   font-family: var(--cursive-font);
 }
 .public-body,
-.comment-wrapper,
 .body {
   white-space: pre-line;
 }
@@ -117,9 +115,8 @@ body::before {
   min-width: 250px;
   color: white;
   display: flex;
-  align-items: center;
   font-family: var(--cursive-font);
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
   right: 0;
   animation: slideAndFadeDown 1s ease-in-out 0s 1 forwards;
@@ -292,86 +289,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-.create-comment {
-  font-family: var(--cursive-font);
-  background-color: var(--light-purple);
-  border: none;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 280px;
-  border-radius: var(--border-radius);
-  margin-top: 15px;
-  padding: 10px 0;
-}
-.create-comment form {
-  max-width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.create-comment form label {
-  color: var(--purple);
-  font-size: 23px;
-  font-weight: 900;
-}
-.add-name {
-  margin-top: 15px;
-}
-.add-name,
-.add-text {
-  display: flex;
-  flex-direction: column;
-}
-.add-name label,
-.add-text label {
-  color: white;
-  font-size: 20px;
-}
-.name-label,
-.comment-label {
-  margin: 5px;
-}
-#name {
-  height: 40px;
-}
-#comment {
-  height: 100px;
-}
-#name,
-#comment {
-  border-radius: var(--border-radius);
-  border: none;
-  width: 220px;
-  padding: 7px;
-}
-textarea {
-  vertical-align: top;
-}
-.submit-comment-container {
-  display: flex;
-  justify-content: center;
-}
-.submit-comment-container button {
-  background-color: var(--purple);
-  width: 100px;
-  height: 40px;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-weight: 900;
-  margin: 15px 0;
-}
-.comment-wrapper {
-  background-color: var(--light-purple);
-  min-width: 500px;
-  border: 1px solid var(--purple);
-  margin: 15px 0;
-  border-radius: var(--border-radius);
-  padding: 0 15px;
-}
 /* BLOG SECURE */
 /* NEW POST PAGE */
 .create-blog-post {
@@ -427,8 +344,7 @@ textarea {
 .edit-post,
 .delete-post,
 .new-post-submit,
-.edit-submit-btn,
-.delete-comment {
+.edit-submit-btn {
   margin: 15px 0;
   width: 100px;
   height: 30px;
