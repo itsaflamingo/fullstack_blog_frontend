@@ -1,22 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handlee&display=swap");
 * {
-  --purple: #48404D;
+  --purple: #48404d;
   --light-purple: #b4afb7;
   --border-radius: 20px;
-  --cursive-font: 'Dancing Script', cursive;
-  --main-background: url('./img/iStock-1185906653MED.jpg');
-  --yellow: rgb(174, 165, 51)
+  --cursive-font: "Dancing Script", cursive;
+  --main-background: url("./img/iStock-1185906653MED.jpg");
+  --yellow: rgb(174, 165, 51);
+  --svg-bg: url("./img/Blog-bg.svg");
 }
 body {
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   height: 100vh;
   margin: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   background-image: var(--main-background);
+  background-size: 15% 25%; /* scales the image to 50% of its original size */
+  opacity: 0.2;
+  z-index: -1;
 }
 #root {
   height: 100%;
 }
-.blog, .blog-posts-secure {
+.blog {
+  display: flex;
+  flex-direction: column;
+  background-image: var(--svg-bg);
+  background-repeat: no-repeat;
+}
+.blog-posts-secure {
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -52,10 +70,12 @@ body {
   color: var(--purple);
   padding: 15px;
 }
-.blog-post, .comment, .blog-post-menu {
+.blog-post,
+.comment,
+.blog-post-menu {
   transform: translate(-20px, -10px);
   animation: slideAndFadeRight 1s ease-in-out 0s 1 forwards;
-} 
+}
 @keyframes slideAndFadeRight {
   0% {
     opacity: 0;
@@ -70,17 +90,20 @@ body {
 .public-date {
   font-family: var(--cursive-font);
 }
-.public-body, .comment-wrapper, .body {
+.public-body,
+.comment-wrapper,
+.body {
   white-space: pre-line;
 }
 .public-body {
   padding: 5px;
   word-wrap: break-word;
 }
-.public-body p, .public-body ul {
+.public-body p,
+.public-body ul {
   margin: 0;
 }
-.posts-secure-list .public-body, 
+.posts-secure-list .public-body,
 .blog-posts .public-body {
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -92,29 +115,25 @@ body {
 .aside {
   width: 20vw;
   min-width: 250px;
-  background-color: var(--purple);
   color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
   font-family: var(--cursive-font);
   justify-content: space-between;
-  overflow: scroll;
-  position: fixed;
   height: 100%;
   right: 0;
-  animation: slideAndFadeLeft 1s ease-in-out 0s 1 forwards;
+  animation: slideAndFadeDown 1s ease-in-out 0s 1 forwards;
 }
-@keyframes slideAndFadeLeft {
+@keyframes slideAndFadeDown {
   0% {
     opacity: 0;
-    transform: translateX(100%);
-    right: -100%;
+    transform: translateY(-100%);
+    down: 100%;
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
-    right: 0;
+    transform: translateY(0);
+    down: 0;
   }
 }
 .blog-section {
@@ -128,7 +147,7 @@ body {
 .blog-description {
   white-space: pre-line;
   font-size: 20px;
-} 
+}
 .aside-blog {
   display: flex;
   flex-direction: column;
@@ -192,13 +211,15 @@ body {
   align-items: center;
   margin-bottom: 15px;
 }
-#username, #password{
+#username,
+#password {
   height: 25px;
   border-radius: var(--border-radius);
   border: none;
   padding: 5px;
 }
-.username, .password {
+.username,
+.password {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,15 +320,18 @@ a {
 .add-name {
   margin-top: 15px;
 }
-.add-name, .add-text {
+.add-name,
+.add-text {
   display: flex;
   flex-direction: column;
 }
-.add-name label, .add-text label {
+.add-name label,
+.add-text label {
   color: white;
   font-size: 20px;
 }
-.name-label, .comment-label {
+.name-label,
+.comment-label {
   margin: 5px;
 }
 #name {
@@ -316,7 +340,8 @@ a {
 #comment {
   height: 100px;
 }
-#name, #comment {
+#name,
+#comment {
   border-radius: var(--border-radius);
   border: none;
   width: 220px;
@@ -374,12 +399,15 @@ textarea {
 .title-container {
   display: flex;
   flex-direction: column;
-} 
-.title-container, .body, .checkbox-container {
+}
+.title-container,
+.body,
+.checkbox-container {
   font-family: var(--cursive-font);
   font-size: 25px;
 }
-#title, #body {
+#title,
+#body {
   border-radius: var(--border-radius);
   border: 1px solid var(--purple);
   padding: 7px;
@@ -396,7 +424,11 @@ textarea {
   display: flex;
   justify-content: center;
 }
-.edit-post, .delete-post, .new-post-submit, .edit-submit-btn, .delete-comment {
+.edit-post,
+.delete-post,
+.new-post-submit,
+.edit-submit-btn,
+.delete-comment {
   margin: 15px 0;
   width: 100px;
   height: 30px;
@@ -405,7 +437,8 @@ textarea {
   background-color: var(--purple);
   color: white;
 }
-.edit-post:hover, .delete-post:hover {
+.edit-post:hover,
+.delete-post:hover {
   background-color: var(--yellow);
   color: var(--purple);
 }
@@ -437,18 +470,25 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
-.title-input-container, .picture-input-container, .description-input-container {
+.title-input-container,
+.picture-input-container,
+.description-input-container {
   display: flex;
   flex-direction: column;
 }
-.title-input-container label, .picture-input-container label, .description-input-container label {
+.title-input-container label,
+.picture-input-container label,
+.description-input-container label {
   color: var(--purple);
 }
-#blog-title, #picture-url, #blog-description-container {
+#blog-title,
+#picture-url,
+#blog-description-container {
   border-radius: 20px;
   border: none;
 }
-#blog-title, #picture-url {
+#blog-title,
+#picture-url {
   height: 25px;
 }
 #blog-description {
@@ -478,9 +518,9 @@ textarea {
     display: flex;
     width: 100%;
   }
-  .blog-picture, 
-  .blog-description-container, 
-  .github-name, 
+  .blog-picture,
+  .blog-description-container,
+  .github-name,
   .auth-section,
   .github-link {
     display: none;
