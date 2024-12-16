@@ -7,6 +7,9 @@
   --main-background: url("./img/iStock-1185906653MED.jpg");
   --yellow: rgb(174, 165, 51);
   --svg-bg: url("./img/blog-bg2.svg");
+  --deg: 1;
+  --x: -50%;
+  --y: -50%;
 }
 body {
   font-family: "Handlee", cursive;
@@ -99,6 +102,65 @@ body::before {
   border-radius: var(--border-radius);
   padding: 10px;
   overflow: scroll;
+}
+.aside-portal {
+  display: flex;
+}
+.portal {
+  position: absolute;
+  top: 80%;
+  left: 86%;
+  transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
+  font-size: 10vmin;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 90% 95% 85% 105%;
+  background: #0f0;
+  mix-blend-mode: screen;
+  filter: hue-rotate(0deg);
+  animation: wobble calc(150ms * var(--t)) linear infinite;
+  // transform-origin: -var(--y) -var(--x);
+  box-shadow: 0 0 0.5em 0.2em #000 inset, 0 0 0.15em 0 #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    font-size: 1em;
+    // content: '☻';
+    white-space: nowrap;
+  }
+  &:nth-child(1) {
+    --x: -53%;
+    --y: -53%;
+    --t: 37;
+  }
+  &:nth-child(2) {
+    --x: -47%;
+    --y: -52%;
+    --t: 58;
+  }
+  &:nth-child(3) {
+    --x: -45%;
+    --y: -50%;
+    --t: 46;
+  }
+  &:nth-child(4) {
+    --x: -53%;
+    --y: -45%;
+    --t: 72;
+  }
+  &:nth-child(5) {
+    --x: -55%;
+    --y: -45%;
+    --t: 62;
+  }
+}
+
+@keyframes wobble {
+  to {
+    filter: hue-rotate(360deg);
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
 }
 @keyframes slideAndFadeRight {
   0% {

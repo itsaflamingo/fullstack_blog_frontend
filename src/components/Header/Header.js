@@ -40,10 +40,6 @@ export default function Header() {
                 New
               </button>
             )}
-            <div className="blog-section">
-              <Picture />
-              {/* <Description /> */}
-            </div>
           </div>
           {user.user.username && (
             <button
