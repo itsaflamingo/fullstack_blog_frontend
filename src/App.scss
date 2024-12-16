@@ -169,6 +169,13 @@ body::before {
     --t: 62;
   }
 }
+.socials-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 80%;
+  left: 90%;
+}
 
 @keyframes wobble {
   to {
