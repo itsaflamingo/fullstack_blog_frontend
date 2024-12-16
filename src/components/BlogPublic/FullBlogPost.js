@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BlogPost from "./BlogPost";
 // import { CommentContext } from "../Contexts";
-// import CreateComment from "./CreateComment";
 import ViewPostPageMenu from "./ViewPostPageMenu";
 
 export default function FullBlogPost() {
