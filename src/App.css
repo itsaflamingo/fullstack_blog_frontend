@@ -6,7 +6,7 @@
   --cursive-font: "Dancing Script", cursive;
   --main-background: url("./img/iStock-1185906653MED.jpg");
   --yellow: rgb(174, 165, 51);
-  --svg-bg: url("./img/Blog-bg.svg");
+  --svg-bg: url("./img/blog-bg2.svg");
 }
 body {
   font-family: "Handlee", cursive;
@@ -32,7 +32,22 @@ body::before {
   display: flex;
   flex-direction: column;
   background-image: var(--svg-bg);
+  background-size: 100% auto;
   background-repeat: no-repeat;
+}
+.content {
+  display: flex;
+  height: 100vh;
+}
+.blog-name {
+  width: 100%;
+  font-family: var(--cursive-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
 }
 .blog-posts-secure {
   display: flex;
@@ -75,6 +90,16 @@ body::before {
   transform: translate(-20px, -10px);
   animation: slideAndFadeRight 1s ease-in-out 0s 1 forwards;
 }
+/* ASIDE */
+.aside {
+  background-color: var(--light-purple);
+  height: max-content;
+  max-height: 60%;
+  width: 10%;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  overflow: scroll;
+}
 @keyframes slideAndFadeRight {
   0% {
     opacity: 0;
@@ -109,11 +134,11 @@ body::before {
   overflow: hidden;
   white-space: pre-line;
 }
-/* ASIDE */
-.aside {
+/* Header */
+.Header {
   color: white;
   display: flex;
-  font-family: var(--cursive-font);
+  flex-direction: column;
   justify-content: center;
   animation: slideAndFadeDown 1s ease-in-out 0s 1 forwards;
 }
@@ -142,17 +167,18 @@ body::before {
   white-space: pre-line;
   font-size: 20px;
 }
-.aside-blog {
+.Header-blog {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.aside-img {
+.Header-img {
   max-width: 150px;
   border-radius: 20px;
 }
 .clickable {
   transition: all 0.5s ease-out;
+  border-radius: var(--border-radius);
 }
 .clickable:hover {
   cursor: pointer;
@@ -171,6 +197,7 @@ body::before {
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 .archive .clickable {
   padding: 5px;
@@ -181,8 +208,9 @@ body::before {
   align-items: center;
   gap: 10px;
 }
-.archive h3 {
-  margin: 0;
+.archive-button {
+  margin: none;
+  font-size: 1.2rem;
 }
 .enter {
   background-color: var(--light-purple);
@@ -218,7 +246,7 @@ body::before {
   flex-direction: column;
   align-items: center;
 }
-.aside button {
+.Header button {
   margin: 15px 0;
   width: 100px;
   height: 30px;
@@ -235,7 +263,6 @@ button:hover {
 }
 button {
   cursor: pointer;
-  font-family: var(--cursive-font);
   font-size: 20px;
   transition: all 0.5s ease-out;
 }
@@ -367,7 +394,7 @@ a {
   display: flex;
   justify-content: center;
 }
-/* BLOG_SECURE ASIDE */
+/* BLOG_SECURE Header */
 .bloginfo-form-container {
   width: 100%;
   background-color: var(--light-purple);
@@ -415,12 +442,12 @@ a {
     flex-direction: column;
     height: 100vh;
   }
-  .aside {
+  .Header {
     top: 0;
     display: flex;
     font-size: 14px;
   }
-  .aside-blog {
+  .Header-blog {
     display: flex;
   }
   .blog-section {

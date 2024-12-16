@@ -1,12 +1,16 @@
 import "./App.css";
-import Aside from "./components/Aside/Aside";
+import Header from "./components/Header/Header";
 import BlogPosts from "./components/BlogPublic/BlogPosts";
+import Aside from "./components/Aside/Aside";
 
 function Blog() {
   return (
     <div className="blog">
-      <Aside />
-      <BlogPosts />
+      <Header />
+      <div className="content">
+        <BlogPosts />
+        <Aside />
+      </div>
     </div>
   );
 }
