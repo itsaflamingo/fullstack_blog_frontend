@@ -6,7 +6,7 @@ export default function Portal() {
   const [showSocials, setShowSocials] = useState(false);
 
   return (
-    <div>
+    <div className="portal-socials-sticky">
       <div
         className="portal-wrapper"
         onClick={() => setShowSocials(!showSocials)}

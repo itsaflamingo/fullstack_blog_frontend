@@ -98,10 +98,11 @@ body::before {
 }
 /* ASIDE */
 .aside {
+  position: relative;
   background-color: var(--light-purple);
   height: max-content;
   max-height: 60%;
-  width: 100%;
+  width: 50%;
   border-radius: var(--border-radius);
   padding: 10px;
   overflow: scroll;
@@ -109,21 +110,23 @@ body::before {
 }
 .aside-portal {
   display: flex;
+  flex-direction: column;
+  width: 35vw;
+  height: 100%;
 }
 .portal-wrapper {
   &:hover {
     cursor: pointer;
-    transform: scale(1.2) translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
+    transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
   }
-  position: absolute;
-  top: 80%;
-  left: 90%;
+  position: relative;
+  top: 90%;
 }
 .portal {
   position: absolute;
-  top: 80%;
-  left: 90%;
+  top: 100%;
+  left: 70%;
   transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
   font-size: 10vmin;
   width: 1.2em;
@@ -169,12 +172,36 @@ body::before {
     --t: 62;
   }
 }
+.portal-socials-sticky {
+  position: sticky;
+  top: 60%;
+  height: 100px;
+}
 .socials-container {
-  display: flex;
-  justify-content: center;
   position: absolute;
-  top: 80%;
-  left: 90%;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  justify-content: space-around;
+  --d: 5.5em; /* image size */
+  --rel: 0.5; /* how much extra space we want between images, 1 = 1 image size */
+  --ba: 1turn / var(--m);
+  --r: calc(
+    0.5 * (1 + var(--rel)) * var(--d) / tan(0.5 * var(--ba))
+  ); /* circle radius */
+  display: grid;
+  width: calc(2 * var(--r) + var(--d)); /* container size */
+}
+.socials {
+  color: var(--purple);
+}
+.socials-container a {
+  grid-area: 1/ 1;
+  place-self: center;
+  width: var(--d);
+  --ca: calc(var(--i) * var(--ba));
+  transform: rotate(var(--ca)) translate(var(--r)) rotate(calc(-1 * var(--ca)));
 }
 
 @keyframes wobble {
