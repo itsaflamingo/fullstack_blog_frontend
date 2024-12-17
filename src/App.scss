@@ -180,11 +180,11 @@ body::before {
 .socials-container {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 48%;
   width: 200px;
   height: 200px;
   justify-content: space-around;
-  --d: 5.5em; /* image size */
+  --d: 6em; /* image size */
   --rel: 0.5; /* how much extra space we want between images, 1 = 1 image size */
   --ba: 1turn / var(--m);
   --r: calc(
@@ -203,7 +203,9 @@ body::before {
   --ca: calc(var(--i) * var(--ba));
   transform: rotate(var(--ca)) translate(var(--r)) rotate(calc(-1 * var(--ca)));
 }
-
+.socials i {
+  font-size: 20px;
+}
 @keyframes wobble {
   to {
     filter: hue-rotate(360deg);
