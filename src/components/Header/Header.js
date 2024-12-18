@@ -53,6 +53,15 @@ export default function Header() {
           <div className="auth-section">
             {user.user.username ? <LogOut /> : <LogIn />}
           </div>
+          <div className="header-description">
+            <div>
+              <h2>Elizabeth P.</h2>
+            </div>
+            <div>
+              <h2>The internet is my rabit hole.</h2>
+              <h3>I'm here to tinker with it :)</h3>
+            </div>
+          </div>
         </div>
       </div>
     </BlogInfoContext.Provider>
