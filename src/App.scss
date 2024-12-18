@@ -79,9 +79,9 @@ body::before {
   margin-right: 20px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-items: center;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .blog-post {
   background-color: white;
@@ -121,12 +121,14 @@ body::before {
     transition: transform 0.3s ease-in-out;
   }
   position: relative;
-  top: 90%;
+  top: 13vh;
+  left: 7.5vw;
 }
 .portal {
   position: absolute;
-  top: 100%;
-  left: 70%;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
   transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
   font-size: 10vmin;
   width: 1.2em;
@@ -179,8 +181,8 @@ body::before {
 }
 .socials-container {
   position: absolute;
-  top: 0;
-  left: 48%;
+  top: 0vh;
+  left: 19vw;
   width: 200px;
   height: 200px;
   justify-content: space-around;
@@ -192,6 +194,7 @@ body::before {
   ); /* circle radius */
   display: grid;
   width: calc(2 * var(--r) + var(--d)); /* container size */
+  z-index: -10;
 }
 .socials {
   color: var(--purple);
