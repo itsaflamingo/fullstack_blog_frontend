@@ -58,8 +58,8 @@ export default function Header() {
               <h2>Elizabeth P.</h2>
             </div>
             <div>
-              <h2>The internet is my rabit hole.</h2>
-              <h3>I'm here to tinker with it :)</h3>
+              <h2>The web is my rabit hole.</h2>
+              <h3>I build things for it.</h3>
             </div>
           </div>
         </div>
